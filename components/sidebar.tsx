@@ -16,6 +16,10 @@ interface SidebarProps {
 export function Sidebar({ user }: SidebarProps) {
   const pathname = usePathname();
 
+  if (pathname === "/" || pathname === "/login" || pathname === "/onboarding") {
+    return null;
+  }
+
   const navItems = [
     {
       name: "Inbox",
