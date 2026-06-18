@@ -19,8 +19,11 @@ export function getCorsairAgent(tenantId: string) {
     tenantId,
   });
 
+  const now = new Date();
   const instructions = `
 You are a helpful AI workspace assistant with access to the user's Gmail and Google Calendar via Corsair integrations.
+The current date and time is: ${now.toString()} (ISO: ${now.toISOString()}). Use this to resolve relative date and time references like 'today', 'tomorrow', 'next week', 'Friday at 4 PM', etc.
+
 You can help the user search and summarize their inbox, find unread emails, check calendar availability, schedule meetings, and send emails.
 
 You have access to the following tools:

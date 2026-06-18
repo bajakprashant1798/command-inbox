@@ -21,6 +21,7 @@ export async function getUpcomingEvents(tenantId: string): Promise<CalendarEvent
       maxResults: 15,
       singleEvents: true, // Expand recurring events into individual occurrences
       orderBy: "startTime", // Sort by start time ascending
+      timeMin: new Date().toISOString(),
     });
 
     const items = response.items || [];
