@@ -74,8 +74,8 @@ export function Sidebar({ user }: SidebarProps) {
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-45 w-64 bg-zinc-900 text-zinc-100 flex flex-col h-screen border-r border-zinc-800 select-none flex-shrink-0 transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-y-0 left-0 z-45 w-64 bg-zinc-900 text-zinc-100 flex flex-col h-screen border-r border-zinc-800 select-none flex-shrink-0 transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }`}
       >
       {/* Brand Header */}

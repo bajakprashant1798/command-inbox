@@ -17,7 +17,7 @@ export default async function CommandPage() {
   }
 
   return (
-    <div className="flex-1 flex flex-col h-full bg-zinc-950">
+    <div className="flex-1 flex flex-col h-full bg-zinc-950 lg:pl-64">
       <CommandInput />
     </div>
   );

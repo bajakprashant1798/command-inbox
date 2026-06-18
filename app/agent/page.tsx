@@ -133,7 +133,7 @@ export default function AgentPage() {
   };
 
   return (
-    <div className="flex-1 flex flex-col lg:flex-row h-full bg-zinc-950 font-sans overflow-hidden">
+    <div className="flex-1 flex flex-col lg:flex-row h-full bg-zinc-950 font-sans overflow-hidden lg:pl-64">
       {/* Main Chat Panel */}
       <div className="flex-1 flex flex-col min-h-0 lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-900">
         {/* Header */}

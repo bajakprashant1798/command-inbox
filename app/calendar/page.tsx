@@ -25,7 +25,7 @@ export default async function CalendarPage() {
     const events = await getUpcomingEvents(user.email!);
 
     return (
-      <div className="flex-1 flex flex-col h-full overflow-hidden bg-zinc-950">
+      <div className="flex-1 flex flex-col h-full overflow-hidden bg-zinc-950 lg:pl-64">
         <EventList initialEvents={events} />
       </div>
     );
