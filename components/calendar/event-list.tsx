@@ -101,7 +101,7 @@ export function EventList({ initialEvents }: EventListProps) {
   return (
     <div className="flex-1 flex flex-col h-full bg-zinc-950 text-zinc-100 font-sans overflow-hidden">
       {/* Header */}
-      <header className="px-8 py-6 border-b border-zinc-900 flex items-center justify-between bg-zinc-950 flex-shrink-0">
+      <header className="pl-16 pr-6 py-6 border-b border-zinc-900 flex items-center justify-between bg-zinc-950 flex-shrink-0 lg:px-8">
         <div>
           <h2 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
@@ -122,7 +122,7 @@ export function EventList({ initialEvents }: EventListProps) {
       </header>
 
       {/* Main Schedule Pane */}
-      <div className="flex-1 overflow-y-auto px-8 py-6 space-y-8 max-w-4xl w-full mx-auto">
+      <div className="flex-1 overflow-y-auto px-6 py-6 space-y-8 max-w-4xl w-full mx-auto lg:px-8">
         {events.length === 0 ? (
           <div className="p-16 text-center text-zinc-500 flex flex-col items-center justify-center h-64 border border-dashed border-zinc-900 rounded-2xl bg-zinc-900/10">
             <CalendarDays className="w-10 h-10 text-zinc-700 mb-3" />

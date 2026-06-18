@@ -81,7 +81,7 @@ export function ThreadList({ initialThreads }: ThreadListProps) {
       {/* Threads List Pane */}
       <div className="flex-1 flex flex-col h-full border-r border-zinc-900 bg-zinc-950">
         {/* Header */}
-        <header className="px-8 py-6 border-b border-zinc-900 flex items-center justify-between flex-shrink-0">
+        <header className="pl-16 pr-6 py-6 border-b border-zinc-900 flex items-center justify-between flex-shrink-0 lg:px-8">
           <div>
             <h2 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
@@ -102,7 +102,7 @@ export function ThreadList({ initialThreads }: ThreadListProps) {
         </header>
 
         {/* Search & Tabs */}
-        <div className="px-8 py-4 border-b border-zinc-900 space-y-4 bg-zinc-950/50 flex-shrink-0">
+        <div className="px-6 lg:px-8 py-4 border-b border-zinc-900 space-y-4 bg-zinc-950/50 flex-shrink-0">
           <div className="relative">
             <Search className="absolute left-3 top-2.5 w-4 h-4 text-zinc-500" />
             <input
@@ -134,7 +134,7 @@ export function ThreadList({ initialThreads }: ThreadListProps) {
         {/* Threads Rows */}
         <div className="flex-1 overflow-y-auto divide-y divide-zinc-900/40">
           {filteredThreads.length === 0 ? (
-            <div className="p-16 text-center text-zinc-500 flex flex-col items-center justify-center h-64 border border-dashed border-zinc-900 rounded-2xl bg-zinc-900/10 m-8">
+            <div className="p-16 text-center text-zinc-500 flex flex-col items-center justify-center h-64 border border-dashed border-zinc-900 rounded-2xl bg-zinc-900/10 m-6 lg:m-8">
               <MailOpen className="w-8 h-8 text-zinc-700 mb-3" />
               <p className="text-sm">Inbox Zero. You are all caught up!</p>
             </div>
@@ -145,7 +145,7 @@ export function ThreadList({ initialThreads }: ThreadListProps) {
                 <div
                   key={thread.id}
                   onClick={() => setSelectedThread(thread)}
-                  className={`flex items-start gap-4 p-5 hover:bg-zinc-900/30 cursor-pointer transition-all border-l-2 relative ${
+                  className={`flex items-start gap-4 p-5 px-6 lg:px-8 hover:bg-zinc-900/30 cursor-pointer transition-all border-l-2 relative ${
                     isSelected
                       ? "bg-zinc-900/50 border-l-indigo-500"
                       : "border-l-transparent"
@@ -177,7 +177,7 @@ export function ThreadList({ initialThreads }: ThreadListProps) {
 
       {/* Selected Thread Drawer / Preview Panel */}
       {selectedThread ? (
-        <div className="w-[480px] h-full bg-zinc-900/90 flex flex-col border-l border-zinc-900 shadow-2xl overflow-y-auto animate-in slide-in-from-right-4 duration-200 z-20">
+        <div className="fixed inset-0 lg:static lg:w-[480px] h-full bg-zinc-900/95 lg:bg-zinc-900/90 flex flex-col border-l border-zinc-900 shadow-2xl overflow-y-auto animate-in slide-in-from-right-4 duration-200 z-[55] lg:z-20">
           <header className="p-6 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/40 sticky top-0 backdrop-blur-md z-10">
             <div>
               <span className="text-[10px] bg-zinc-800 border border-zinc-700 text-zinc-400 px-2 py-0.5 rounded font-mono uppercase">

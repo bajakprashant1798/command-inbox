@@ -4,7 +4,7 @@ import { getCorsairConnectionStatus } from "@/lib/auth/connection";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Command Center | Command Inbox",
+  title: "Command Center | MailCmd Inbox",
   description: "Natural language workspace actions executor",
 };
 

@@ -47,11 +47,11 @@ export default async function Home() {
       {/* Header / Navbar */}
       <header className="relative z-10 w-full border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-950/40">
-            <Sparkles className="w-4.5 h-4.5 text-white animate-pulse" />
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center overflow-hidden">
+            <img src="/icon.png" alt="MailCmd Logo" className="w-8 h-8 object-contain" />
           </div>
           <div>
-            <h1 className="font-bold text-sm tracking-widest text-white uppercase font-sans">Command Inbox</h1>
+            <h1 className="font-bold text-sm tracking-widest text-white uppercase font-sans">MailCmd Inbox</h1>
             <p className="text-[9px] text-zinc-500 font-mono tracking-wider">WORKSPACE COMPILER</p>
           </div>
         </div>
@@ -70,19 +70,19 @@ export default async function Home() {
       <section className="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-16 text-center space-y-8 flex-shrink-0">
         {/* Release Pill */}
         <div className="inline-flex items-center gap-2 bg-indigo-950/40 border border-indigo-900/50 px-3.5 py-1.5 rounded-full text-[10px] font-mono text-indigo-400 mx-auto w-fit">
-          <Zap className="w-3.5 h-3.5 text-indigo-400 animate-bounce" /> Gemini-Powered Action Engine Active
+          <Zap className="w-3.5 h-3.5 text-indigo-400 animate-bounce" /> Smart AI Assistant Active
         </div>
 
         {/* Hero Headlines */}
         <div className="space-y-4 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1] font-sans">
-            Your Inbox. Under Control. <br />
+            Your Email & Calendar. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-300% animate-pulse">
-              Powered by AI.
+              Handled by AI.
             </span>
           </h2>
           <p className="text-sm md:text-base text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-            The intelligent command center connecting Gmail and Google Calendar. Automate scheduling, find availability, resolve conflicts, and run an interactive MCP agent chat in real-time.
+            MailCmd Inbox is your smart virtual assistant. It reads your emails, checks your schedule, detects meeting details, resolves double-bookings, and drafts replies for you in plain English.
           </p>
         </div>
 
@@ -125,8 +125,8 @@ export default async function Home() {
             {/* Simulation Pane 1: Inbox Item */}
             <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-850 space-y-3 shadow-inner">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] text-zinc-500 font-mono">Gmail Thread</span>
-                <span className="px-2 py-0.5 rounded bg-indigo-950 text-indigo-400 text-[9px] font-mono border border-indigo-900/40">Gemini Parsing</span>
+                <span className="text-[10px] text-zinc-500 font-mono">Incoming Email</span>
+                <span className="px-2 py-0.5 rounded bg-indigo-950 text-indigo-400 text-[9px] font-mono border border-indigo-900/40">Smart Reader</span>
               </div>
               <div className="space-y-1">
                 <p className="text-xs font-semibold text-white truncate">Meeting Request: Project Sync</p>
@@ -141,22 +141,22 @@ export default async function Home() {
             <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-850 space-y-3 shadow-inner relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-full blur-xl" />
               <div className="flex items-center justify-between">
-                <span className="text-[10px] text-zinc-500 font-mono">Action Engine</span>
+                <span className="text-[10px] text-zinc-500 font-mono">Assistant Suggestion</span>
                 <span className="flex items-center gap-1 text-[9px] text-emerald-400 font-mono">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Conflict Resolved
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Time Available
                 </span>
               </div>
               <div className="space-y-2 text-[10px]">
                 <div className="flex justify-between text-zinc-400">
-                  <span>Detected Start:</span>
-                  <span className="text-white font-mono">Tomorrow 16:00</span>
+                  <span>Suggested Start:</span>
+                  <span className="text-white font-mono">Tomorrow 4:00 PM</span>
                 </div>
                 <div className="flex justify-between text-zinc-400">
-                  <span>Detected End:</span>
-                  <span className="text-white font-mono">Tomorrow 17:00</span>
+                  <span>Suggested End:</span>
+                  <span className="text-white font-mono">Tomorrow 5:00 PM</span>
                 </div>
                 <div className="p-2 rounded bg-indigo-900/20 border border-indigo-900/40 text-indigo-300">
-                  Calendar check: Free (No conflict). Click execute to schedule.
+                  Checking your calendar... You're free! Click to schedule.
                 </div>
               </div>
             </div>
@@ -164,16 +164,16 @@ export default async function Home() {
             {/* Simulation Pane 3: MCP Agent Chat */}
             <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-850 space-y-3 shadow-inner">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] text-zinc-500 font-mono">Agent Interaction</span>
-                <span className="text-[9px] text-purple-400 font-mono">MCP Protocol</span>
+                <span className="text-[10px] text-zinc-500 font-mono">Chat with Assistant</span>
+                <span className="text-[9px] text-purple-400 font-mono">AI Assistant</span>
               </div>
               <div className="space-y-2">
                 <div className="bg-zinc-900 p-2 rounded text-[10px] text-zinc-300 text-right w-[85%] ml-auto border border-zinc-850">
                   Check my agenda for tomorrow.
                 </div>
                 <div className="bg-indigo-950/20 p-2.5 rounded text-[10px] text-zinc-300 border border-indigo-900/20 w-[90%] space-y-1">
-                  <p className="font-semibold text-white">Agent Response:</p>
-                  <p className="text-zinc-455 leading-normal">Tomorrow you have 2 meetings. First is at 4:00 PM with Rock Happy.</p>
+                  <p className="font-semibold text-white">Assistant Response:</p>
+                  <p className="text-zinc-455 leading-normal">Tomorrow you have 2 meetings. The first is at 4:00 PM with Rock Happy.</p>
                 </div>
               </div>
             </div>
@@ -185,10 +185,10 @@ export default async function Home() {
       <section id="features" className="relative z-10 max-w-5xl mx-auto px-6 py-20 border-t border-zinc-900 flex-shrink-0 space-y-12">
         <div className="text-center space-y-2">
           <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight font-sans">
-            Designed for Performance. Scoped for Privacy.
+            Smart Features. Made Simple.
           </h3>
           <p className="text-xs md:text-sm text-zinc-400 max-w-lg mx-auto">
-            A secure application combining advanced language models with structural APIs.
+            We combine smart artificial intelligence with your calendar and email to handle scheduling automatically.
           </p>
         </div>
 
@@ -199,9 +199,9 @@ export default async function Home() {
               <Terminal className="w-5 h-5 text-indigo-400" />
             </div>
             <div className="space-y-1.5">
-              <h4 className="text-sm font-semibold text-white">Action Engine</h4>
+              <h4 className="text-sm font-semibold text-white">Smart Scheduler</h4>
               <p className="text-xs text-zinc-455 leading-relaxed">
-                Gemini structured parsing automatically parses emails, checks availability, runs conflict detection, and schedules meetings.
+                Automatically reads emails to find proposed times, checks your calendar for double-bookings, and lets you book meetings instantly.
               </p>
             </div>
           </div>
@@ -212,9 +212,9 @@ export default async function Home() {
               <MessageSquare className="w-5 h-5 text-purple-400" />
             </div>
             <div className="space-y-1.5">
-              <h4 className="text-sm font-semibold text-white">MCP Agent Chat</h4>
+              <h4 className="text-sm font-semibold text-white">Chat Assistant</h4>
               <p className="text-xs text-zinc-455 leading-relaxed">
-                Run an interactive agent chat using `@openai/agents` connected to dynamic MCP tools to search calendar, inbox, and execute scripts.
+                Talk to your virtual assistant in plain English. Ask it to check your schedule, find unread emails, or write draft replies.
               </p>
             </div>
           </div>
@@ -225,9 +225,9 @@ export default async function Home() {
               <RefreshCw className="w-5 h-5 text-blue-400" />
             </div>
             <div className="space-y-1.5">
-              <h4 className="text-sm font-semibold text-white">Realtime Sync</h4>
+              <h4 className="text-sm font-semibold text-white">Instant Updates</h4>
               <p className="text-xs text-zinc-455 leading-relaxed">
-                Instant Gmail and Calendar updates push directly via webhooks, triggering inbox refreshes and updating the activity panel.
+                Your email inbox and calendar sync automatically. Any new message or scheduling changes show up immediately.
               </p>
             </div>
           </div>
@@ -238,9 +238,9 @@ export default async function Home() {
               <ShieldCheck className="w-5 h-5 text-emerald-400" />
             </div>
             <div className="space-y-1.5">
-              <h4 className="text-sm font-semibold text-white">Multi-Tenancy</h4>
+              <h4 className="text-sm font-semibold text-white">Safe & Private</h4>
               <p className="text-xs text-zinc-455 leading-relaxed">
-                OAuth connections, credentials, and settings are fully isolated and securely encrypted under your verified email tenant.
+                Your data is protected. We connect safely to your Google accounts, encrypt your credentials, and keep everything completely private.
               </p>
             </div>
           </div>
@@ -250,7 +250,7 @@ export default async function Home() {
       {/* Footer / Specs */}
       <footer className="relative z-10 w-full border-t border-zinc-900 bg-zinc-950/50 py-8 px-6 text-center space-y-4 flex-shrink-0 mt-auto">
         <p className="text-[10px] text-zinc-500 font-mono">
-          COMMAND INBOX — BOOTSTRAPPED FOR HIGH-SPEED HACKATHON PERFORMANCE
+          MAILCMD INBOX — BOOTSTRAPPED FOR HIGH-SPEED HACKATHON PERFORMANCE
         </p>
         <div className="flex justify-center gap-6 text-[10px] text-zinc-400 font-mono">
           <span>NEXT.JS 16.2</span>

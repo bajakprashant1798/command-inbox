@@ -22,6 +22,7 @@ export default function AgentPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [statusLogs, setStatusLogs] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [email, setEmail] = useState<string>("");
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +40,8 @@ export default function AgentPage() {
       .then((data) => {
         if (data && data.connected === false) {
           window.location.href = "/onboarding";
+        } else if (data && data.email) {
+          setEmail(data.email);
         }
       })
       .catch((err) => console.error("Error checking connection status", err));
@@ -132,9 +135,9 @@ export default function AgentPage() {
   return (
     <div className="flex-1 flex flex-col lg:flex-row h-full bg-zinc-950 font-sans overflow-hidden">
       {/* Main Chat Panel */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden border-r border-zinc-900">
+      <div className="flex-1 flex flex-col min-h-0 lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-900">
         {/* Header */}
-        <div className="px-6 py-4 border-b border-zinc-900 flex items-center justify-between flex-shrink-0 bg-zinc-950/80 backdrop-blur-md">
+        <div className="pl-16 pr-4 py-4 border-b border-zinc-900 flex items-center justify-between flex-shrink-0 bg-zinc-950/80 backdrop-blur-md lg:px-6">
           <div className="flex items-center gap-2.5">
             <Bot className="w-5 h-5 text-indigo-500" />
             <div>
@@ -146,7 +149,9 @@ export default function AgentPage() {
           </div>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1 text-[11px] font-mono text-zinc-400 bg-zinc-900 px-2.5 py-1 rounded-full border border-zinc-800">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" /> Tenant: dev
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+              <span className="hidden sm:inline">Tenant:</span>
+              <span className="max-w-[80px] sm:max-w-none truncate">{email || "loading..."}</span>
             </div>
             <button 
               onClick={() => setMessages([{ role: "assistant", content: "Chat reset. How can I help you today?" }])}

@@ -10,7 +10,7 @@ export async function GET() {
     }
     
     const status = await getCorsairConnectionStatus(session.user.email);
-    return NextResponse.json(status);
+    return NextResponse.json({ ...status, email: session.user.email });
   } catch (err: any) {
     console.error("Failed to get connection status:", err);
     return NextResponse.json(

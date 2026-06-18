@@ -6,6 +6,11 @@ import { requireAuth } from "@/lib/auth/session";
 import { getCorsairConnectionStatus } from "@/lib/auth/connection";
 import { redirect } from "next/navigation";
 
+export const metadata = {
+  title: "Inbox | MailCmd Inbox",
+  description: "View and manage your Gmail inbox",
+};
+
 export const dynamic = "force-dynamic";
 
 export default async function InboxPage() {

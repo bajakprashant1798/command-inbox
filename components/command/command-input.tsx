@@ -197,7 +197,7 @@ export function CommandInput() {
     : [];
 
   return (
-    <div className="flex-1 flex flex-col items-center bg-zinc-950 text-zinc-100 p-8 font-sans h-full overflow-y-auto">
+    <div className="flex-1 flex flex-col items-center bg-zinc-950 text-zinc-100 p-6 pt-16 lg:p-8 lg:pt-12 font-sans h-full overflow-y-auto">
       <div className="max-w-3xl w-full space-y-8 py-12">
         {/* Title */}
         <div className="space-y-2 text-center sm:text-left">

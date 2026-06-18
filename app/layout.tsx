@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Command Inbox",
+  title: "MailCmd Inbox",
   description: "Production-grade hackathon command center & inbox",
 };
 

@@ -1,8 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Inbox, Calendar, Terminal, Sparkles, MessageSquare, LogOut } from "lucide-react";
+import { Inbox, Calendar, Terminal, Sparkles, MessageSquare, LogOut, Menu, X } from "lucide-react";
 import { signOut } from "next-auth/react";
 
 interface SidebarProps {
@@ -15,6 +16,12 @@ interface SidebarProps {
 
 export function Sidebar({ user }: SidebarProps) {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Automatically close the mobile sidebar drawer when the route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   if (pathname === "/" || pathname === "/login" || pathname === "/onboarding") {
     return null;
@@ -48,14 +55,36 @@ export function Sidebar({ user }: SidebarProps) {
   ];
 
   return (
-    <aside className="w-64 bg-zinc-900 text-zinc-100 flex flex-col h-screen border-r border-zinc-800 select-none flex-shrink-0">
+    <>
+      {/* Floating Hamburger Toggle Button on Mobile */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed top-3.5 left-4 z-50 p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white lg:hidden cursor-pointer flex items-center justify-center shadow-lg transition-all focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        aria-label="Toggle Navigation Sidebar"
+      >
+        {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+      </button>
+
+      {/* Backdrop Overlay for Mobile Drawer */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 lg:hidden cursor-pointer transition-opacity animate-in fade-in duration-200"
+        />
+      )}
+
+      <aside
+        className={`fixed inset-y-0 left-0 z-45 w-64 bg-zinc-900 text-zinc-100 flex flex-col h-screen border-r border-zinc-800 select-none flex-shrink-0 transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
       {/* Brand Header */}
       <div className="p-6 border-b border-zinc-800 flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg bg-indigo-650 flex items-center justify-center shadow-md shadow-indigo-900/30">
-          <Sparkles className="w-4 h-4 text-white animate-pulse" />
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
+          <img src="/icon.png" alt="MailCmd Logo" className="w-7 h-7 object-contain" />
         </div>
         <div>
-          <h1 className="font-semibold text-sm tracking-wide text-white font-sans">COMMAND INBOX</h1>
+          <h1 className="font-bold text-xs tracking-wider text-white font-sans">MAILCMD INBOX</h1>
           <p className="text-[10px] text-zinc-500 font-mono">v1.0.0</p>
         </div>
       </div>
@@ -137,5 +166,6 @@ export function Sidebar({ user }: SidebarProps) {
         </div>
       </div>
     </aside>
+    </>
   );
 }

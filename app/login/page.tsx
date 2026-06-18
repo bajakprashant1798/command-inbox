@@ -10,11 +10,11 @@ export default function LoginPage() {
         
         {/* Branding */}
         <div className="flex flex-col items-center gap-3">
-          <div className="w-14 h-14 rounded-2xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-900/30">
-            <Sparkles className="w-7 h-7 text-white animate-pulse" />
+          <div className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden">
+            <img src="/icon.png" alt="MailCmd Logo" className="w-14 h-14 object-contain" />
           </div>
           <div className="space-y-1">
-            <h1 className="text-2xl font-bold text-white tracking-wider">Command Inbox</h1>
+            <h1 className="text-2xl font-bold text-white tracking-wider">MailCmd Inbox</h1>
             <p className="text-xs text-zinc-400 font-medium">AI Workspace for Gmail + Calendar</p>
           </div>
         </div>
